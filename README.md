@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+🧠 RAG Chatbot – AI-powered Legal Assistant (Flask + React)
+📌 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an AI-powered legal assistant chatbot built using Flask (Python) for the backend and React.js for the frontend.
+It answers user queries related to consumer rights and legal guidance using a Retrieval-Augmented Generation (RAG) architecture.
 
-## Available Scripts
+The project demonstrates how to:
 
-In the project directory, you can run:
+Integrate LLMs (OpenAI-compatible models) in real-world applications
 
-### `npm start`
+Combine a React frontend with a Flask backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Handle CORS and REST API communication
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Manage local inference and troubleshooting with multiple model versions
+__________________________________________________________________________________________________________________________________________________________________________________________
 
-### `npm test`
+⚙️ Tech Stack
+Layer	Technology	Purpose
+Frontend	React.js, TailwindCSS	User interface and chat system
+Backend	Flask (Python)	API endpoints and LLM integration
+AI/LLM	OpenAI-compatible model (gpt-4 / gpt-3.5-turbo, or local)	Language understanding and generation
+Utilities	Flask-CORS, Threading	Cross-origin communication and background server run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+____________________________________________________________________________________________________________________________________________________________________________________________
 
-### `npm run build`
+🚀 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🧩 Chatbot Interface: Ask questions about consumer rights, legal procedures, etc.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🔗 Flask API Integration: Communication between React and backend AI model.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+⚡ Asynchronous Operation: Flask runs parallel to Jupyter using threads.
 
-### `npm run eject`
+🔒 CORS Configured: Secure communication between localhost:3000 and localhost:5000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🧠 RAG Ready: Supports expansion with document-based retrieval (deprecation-ready).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_____________________________________________________________________________________________________________________________________________________________________________________________
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🧰 Project Structure
+rag-chatbot/
+│
+├── backend/
+│   ├── app.py              # Flask backend (API + LLM integration)
+│   ├── requirements.txt    # Backend dependencies
+│
+├── frontend/
+│   ├── src/
+│   │   ├── App.js          # React UI
+│   │   ├── components/     # Reusable chat components
+│   │   └── styles/         # Tailwind styles
+│   ├── package.json        # Frontend dependencies
+│
+├── README.md               # Project documentation
+└── .gitignore
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+________________________________________________________________________________________________________________________________________________________________________________________________
 
-## Learn More
+🧩 Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/<your-username>/rag-chatbot.git
+cd rag-chatbot
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2️⃣ Backend Setup (Flask)
+cd backend
+pip install -r requirements.txt
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+requirements.txt example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+flask
+flask-cors
+openai
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Run Flask (inside Jupyter or terminal):
 
-### Making a Progressive Web App
+from app import app
+app.run(port=5000)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+If using Jupyter:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+!pip install flask flask-cors openai
+# then run the cell containing app.run() or the threaded version
 
-### Deployment
+3️⃣ Frontend Setup (React)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Open another terminal:
 
-### `npm run build` fails to minify
+cd frontend
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Frontend runs on http://localhost:3000
+
+Backend runs on http://127.0.0.1:5000
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+🔄 How It Works
+
+User enters a legal query in the chat window.
+
+React frontend sends a POST request to Flask API (/api/chat).
+
+Flask processes the query, forwards it to the AI model, and returns a JSON response.
+
+The frontend displays the model’s answer in real time.
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+
+🧠 What Problems It Solves
+
+❌ Many people don’t understand consumer rights or basic legal steps.
+
+✅ This chatbot simplifies complex laws into plain-language answers using AI.
+
+⚙️ It also showcases full-stack AI application integration — bridging backend AI logic with frontend interactivity.
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+
+💡 Skills Learned
+Area	Skill/Concept
+Backend Dev	REST API creation, Flask threading, error handling
+Frontend Dev	React components, state management, API integration
+AI Integration	Using OpenAI-like APIs with Python
+DevOps	Localhost coordination, dependency isolation
+Debugging	CORS setup, version conflicts, model deprecation fixes
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+🧩 Challenges & Solutions
+Challenge	Solution
+Flask not connecting to frontend	Implemented flask-cors with proper headers
+Model version mismatch	Deployed compatible LLMs and handled deprecation gracefully
+Jupyter + Flask concurrency	Used background threading to run Flask within Jupyter
+Frontend API errors	Added OPTIONS method and manual CORS response for preflight requests
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+🪄 Future Enhancements
+
+Add vector database (FAISS/Chroma) for RAG document retrieval
+
+Include user chat history and session persistence
+
+Integrate speech-to-text for hands-free queries
+
+Deploy using Render / Vercel / Hugging Face Spaces
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+
+🧾 Example Query
+
+Input:
+“What should I do if an online store refuses to refund a defective item?”
+
+Output:
+“You can file a complaint under the Consumer Protection Act, 2019. Start by contacting the seller with proof of defect. If unresolved, approach the consumer forum online through the National Consumer Helpline (NCH).”
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+✨ Author
+
+Nisarga / Sanmati Pol
+📍 India | 💻 Computer Science & Data Science Graduate
+🧠 Interests: AI, Machine Learning, Full-Stack Projects, Legal-Tech Innovation
+
