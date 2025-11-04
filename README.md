@@ -1,39 +1,70 @@
-# Consumer-Rights-RAG-India
-💡 Project: NyaySaarthi (The Guide to Justice)
+# Getting Started with Create React App
 
-NyaySaarthi is a Retrieval-Augmented Generation (RAG) system built to democratize access to consumer law in India. It serves as an accurate, open-source legal assistant, ensuring consumers get answers grounded solely in official statutes.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Core Mission
+## Available Scripts
 
-To provide fast, reliable, and source-verifiable information regarding the rights and redressal mechanisms established under the Indian Consumer Protection Act, 2019 (CPA 2019).
+In the project directory, you can run:
 
-Why RAG? (The Value Proposition)
+### `npm start`
 
-Traditional Large Language Models (LLMs) often suffer from "hallucination," which is unacceptable when dealing with legal advice. NyaySaarthi mitigates this risk by:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Grounding: All answers are generated only from retrieved text snippets of the official CPA 2019 document.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Verifiability: Every generated response is accompanied by the exact source citation (the specific section/chunk of the Act) it used.
+### `npm test`
 
-Focus: The system's knowledge base is narrow (CPA 2019), making the answers deeply specialized and highly relevant to Indian consumer rights.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Key Functionality
+### `npm run build`
 
-Users can ask practical, real-world questions, and NyaySaarthi will respond with legally compliant guidance, such as:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-"What is the time limit for filing a complaint about a defective product?"
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-"Who is liable for a misleading advertisement on an e-commerce site?"
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-"What is the monetary jurisdiction of the District Consumer Commission?"
+### `npm run eject`
 
-🛠️ Technology Stack
-Data Source                                  Raw CPA 2019 Document                                        (PDF The legal knowledge base.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Embedding Model                              sentence-transformers/all-MiniLM-L6-v2                       Converts text chunks into numerical vectors.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Vector Store                                 FAISS                                                        Stores embeddings for rapid similarity search.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Framework                                    LangChain / Custom Python Scripts                            Orchestrates the RAG pipeline.                             
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-LLM                                          [Specify your chosen LLM, e.g., Llama 3 (Local) or Gemini    Generates the final, human-readable answer.
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
